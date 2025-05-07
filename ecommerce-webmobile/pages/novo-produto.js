@@ -18,30 +18,37 @@ export default function NovoProduto() {
   };
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Novo Produto</h1>
+    <main style={{ padding: '2rem' }}>
+      <header>
+        <h1>Novo Produto</h1>
+      </header>
+
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Nome:</label>
+        <fieldset>
+          <label htmlFor="nome">Nome:</label>
           <input
+            id="nome"
             type="text"
             value={nome}
             onChange={e => setNome(e.target.value)}
             required
           />
-        </div>
-        <div>
-          <label>Preço:</label>
+        </fieldset>
+
+        <fieldset>
+          <label htmlFor="preco">Preço:</label>
           <input
+            id="preco"
             type="number"
             step="0.01"
             value={preco}
             onChange={e => setPreco(e.target.value)}
             required
           />
-        </div>
+        </fieldset>
+
         <button type="submit">Cadastrar</button>
       </form>
-    </div>
+    </main>
   );
 }
